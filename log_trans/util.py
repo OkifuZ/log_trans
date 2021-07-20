@@ -64,7 +64,6 @@ def load_config(conf_path:str):
 
 
 def get_token(line:str) -> Tuple[str, str]:
-
     class ParseStatus(Enum):
         START = 1
         NORMAL_STR = 2
@@ -124,7 +123,7 @@ def get_token(line:str) -> Tuple[str, str]:
                 pair_pending_stack.append(c)
             elif is_pair_right(c):
                 c_ = pair_pending_stack.pop()
-
+                assert(make_pair(c_, c))
             next_token += c
             if len(pair_pending_stack) == 0:
                 end_pos = i
@@ -135,10 +134,10 @@ def get_token(line:str) -> Tuple[str, str]:
 
     return next_token, line[end_pos+1:]
 
-s = 'DB5AAP32811DFF2,1987600662,i,07/06/2021 00:03:11,QueryProbe,Urp CacheKey,Pid="23604" Tid="12716" TS="0x01D77234FBCD4C9A"'
+# s = 'DB5AAP32811DFF2,1987600662,i,07/06/2021 00:03:11,QueryProbe,Urp CacheKey,Pid="23604" Tid="12716" TS="0x01D77234FBCD4C9A"'
 
-while True:
-    token, s = get_token(s)
-    print(token)
-    if len(s) == 0:
-        break
+# while True:
+#     token, s = get_token(s)
+#     print(token)
+#     if len(s) == 0:
+#         break
