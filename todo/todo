@@ -1,0 +1,22 @@
+create table for urp query log
+
+group by traceid
+
+connect different json
+
+partition
+
+the final result should be: onject: traceid, second level key, ..., compare level by level
+
+compare different, using hive sql
+
+further more:
+- stability analysis
+- python script I need to convert
+- kafka data source
+- different 
+- interface for alter table
+
+
+
+

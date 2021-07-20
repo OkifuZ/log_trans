@@ -1,0 +1,31 @@
+# field configuration
+
+# one field a line
+# use '---' to distinguish different tables
+
+# format: 
+# 'field index' 'field type' ['field nullable']
+# splited by space
+
+# EXAMPLE: (case-insensitive)
+# 2 string true
+# 3 boolean false
+# ---
+# 3 boolean
+# 4 int false
+# 5 float 
+
+2 string 
+8 string false
+9 float
+10 float
+11 float
+12 float
+13 float
+14 float
+15 int
+16 int 
+17 int
+18 boolean
+19 string
+20 boolean
