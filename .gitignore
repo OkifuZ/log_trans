@@ -1,2 +1,2 @@
-./data
-./aux_folder
+*/__pycache__/
+.gitignore

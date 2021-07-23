@@ -65,20 +65,27 @@ if __name__ == "__main__":
     f = open('aux/aux_urp', 'r')
     line = f.readlines()[0]
     l1, l2 = kv_extract(line)
-    print(l1)
-    print(l2)
+    json_str = ''
+    for kv_tup in l2:
+        if kv_tup[0] == 'content':
+            json_str = kv_tup[1]
 
-    # assert(len(sys.argv) > 2)
+    import json
 
-    # data_path = sys.argv[1]
-    # config_path = sys.argv[2]
+    def my_print(json_obj:dict):
+        layer = 0
+        for key in list(json_obj):
+            print('\t'*layer, 'layer ', layer, ': ', key)
+            val = json_obj[key]
+            print(val)
+            print('----------------------------------')
+            
 
-    # log_proc = log_proc.LogProcessor(data_path, kv_extract_func=kv_extract, pre_filter_func=pre_filter)
+    obj_json = json.loads(s=json_str,
+    object_hook=my_print
+    )
 
-    # log_proc.generate_DF(config_path=config_path)
-
-    # log_proc.generate_sql(table_name='urp_query_probe_log')
-
-    # log_proc.execute_sql(database_name='hive')
-
-    # log_proc.stop()
+    s = '"asada"'
+    import json
+    o = json.loads(s)
+    print(o)
